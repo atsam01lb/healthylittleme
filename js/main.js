@@ -86,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------- Contact form -> WhatsApp ---------- */
+  /* ---------- Contact form -> Email ---------- */
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
-    const WHATSAPP_NUMBER = "14438137250";
+    const CONTACT_EMAIL = "healthylittleme@gmail.com";
 
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -104,15 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const text =
+      const subject = `New inquiry from ${name} via website`;
+      const body =
         `Hi Healthy Little Me, I'd like to get in touch.\n\n` +
         `Name: ${name}\n` +
         `Email: ${email}\n` +
         `Preferred Contact Number: ${phone}\n` +
         `Message: ${message}`;
 
-      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
-      window.open(url, "_blank", "noopener");
+      const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
     });
   }
 });
