@@ -447,6 +447,28 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Booking ---------- */
 .booking { padding: 90px 0; }
+
+.coverage-panel { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-bottom: 40px; }
+.coverage-card {
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 28px 26px;
+  text-align: center;
+}
+.coverage-icon {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  margin: 0 auto 16px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(62, 142, 138, 0.12);
+  color: var(--teal);
+  font-size: 1.15rem;
+}
+.coverage-card h4 { font-size: 0.98rem; margin-bottom: 10px; }
+.coverage-card p { font-size: 0.88rem; margin-bottom: 0; color: var(--ink-soft); }
+.coverage-value { font-family: var(--font-head); font-weight: 700; font-size: 1.2rem; color: var(--coral); letter-spacing: 0.02em; }
+
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; margin-bottom: 30px; }
 .booking-card {
   background: var(--white);
@@ -634,6 +656,7 @@ img { max-width: 100%; display: block; }
   .why .container { grid-template-columns: 1fr; }
   .about-visual, .why-visual { order: -1; max-width: 380px; margin: 0 auto 20px; }
   .pillar-grid, .specialty-grid { grid-template-columns: repeat(2, 1fr); }
+  .coverage-panel { grid-template-columns: 1fr; }
   .booking-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
