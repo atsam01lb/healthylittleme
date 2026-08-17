@@ -289,7 +289,14 @@
         <h3>Get in Touch</h3>
         <p>Send us your details and we'll reply by email as soon as we can.</p>
       </div>
-      <form id="contact-form" class="contact-form" novalidate>
+      <form id="contact-form" class="contact-form" novalidate
+            action="https://formsubmit.co/healthylittleme@gmail.com" method="POST">
+        <!-- FormSubmit configuration (see https://formsubmit.co/) -->
+        <input type="hidden" name="_subject" value="New inquiry from Healthy Little Me website">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
         <div class="form-row">
           <label for="cf-name">Name</label>
           <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
@@ -308,9 +315,10 @@
         </div>
         <div class="form-row form-row-full">
           <button type="submit" class="btn btn-primary btn-block">
-            <i class="fa-solid fa-envelope"></i> Send via Email
+            <i class="fa-solid fa-envelope"></i> Send Message
           </button>
         </div>
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </div>
