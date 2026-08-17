@@ -86,10 +86,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* ---------- Contact form -> Email ---------- */
+  /* ---------- Contact form -> Email (FormSubmit, sent directly, no redirect) ---------- */
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
     const CONTACT_EMAIL = "healthylittleme@gmail.com";
+    const AJAX_ENDPOINT = `https://formsubmit.co/ajax/${CONTACT_EMAIL}`;
+    const statusEl = document.getElementById("form-status");
+    const submitBtn = contactForm.querySelector("button[type=submit]");
+    const submitBtnDefaultHTML = submitBtn ? submitBtn.innerHTML : "";
+
+    function setStatus(text, isError) {
+      if (!statusEl) return;
+      statusEl.textContent = text;
+      statusEl.style.color = isError ? "#c0392b" : "";
+    }
 
     contactForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -104,16 +114,37 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const subject = `New inquiry from ${name} via website`;
-      const body =
-        `Hi Healthy Little Me, I'd like to get in touch.\n\n` +
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Preferred Contact Number: ${phone}\n` +
-        `Message: ${message}`;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Sending...`;
+      }
+      setStatus("", false);
 
-      const url = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = url;
+      fetch(AJAX_ENDPOINT, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(contactForm),
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error("Request failed");
+          return res.json();
+        })
+        .then(() => {
+          setStatus("Thanks! Your message has been sent — we'll be in touch soon.", false);
+          contactForm.reset();
+        })
+        .catch(() => {
+          setStatus(
+            "Something went wrong sending your message. Please try again, or email us directly at healthylittleme@gmail.com.",
+            true
+          );
+        })
+        .finally(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = submitBtnDefaultHTML;
+          }
+        });
     });
   }
 });
