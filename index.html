@@ -1,10 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Healthy Little Me | Pediatric Nutrition &amp; Eating Disorder Telehealth Care</title>
-<meta name="description" content="Healthy Little Me is a telehealth nutrition practice led by Nisrine Hamad, RD, specializing in pediatric nutrition, eating disorders, and family-based counseling.">
+
+<!-- ===== Primary SEO ===== -->
+<title>Healthy Little Me | Pediatric &amp; Eating Disorder Dietitian Telehealth (US)</title>
+<meta name="description" content="Healthy Little Me is a telehealth pediatric dietitian practice led by Nisrine Hamad, RD, specializing in pediatric nutrition and eating disorder care. Licensed to see clients in 17 US states.">
+<meta name="keywords" content="pediatric dietitian, pediatric nutritionist, eating disorder dietitian, telehealth nutrition, family-based nutrition counseling, PCOS dietitian, tube feeding dietitian, lactation counseling, Nisrine Hamad RD, pediatric nutrition Arizona, pediatric nutrition California, pediatric nutrition Ohio, pediatric nutrition Texas, pediatric nutrition New York">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Healthy Little Me">
+<meta name="theme-color" content="#7C9473">
+<link rel="canonical" href="https://www.healthy-little-me.com/">
+
+<!-- ===== Geo / regional targeting: United States only ===== -->
+<meta name="geo.region" content="US">
+<meta name="geo.placename" content="United States">
+<meta name="distribution" content="US">
+<meta name="target-country" content="US">
+<meta name="language" content="English">
+
+<!-- ===== Open Graph ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Healthy Little Me">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Healthy Little Me | Pediatric &amp; Eating Disorder Dietitian Telehealth">
+<meta property="og:description" content="Telehealth pediatric nutrition and eating disorder care led by Nisrine Hamad, RD. Licensed to see clients in 17 US states, Monday&ndash;Friday.">
+<meta property="og:url" content="https://www.healthy-little-me.com/">
+<meta property="og:image" content="https://www.healthy-little-me.com/images/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Healthy Little Me — Pediatric Nutrition Telehealth">
+
+<!-- ===== Twitter Card ===== -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Healthy Little Me | Pediatric &amp; Eating Disorder Dietitian Telehealth">
+<meta name="twitter:description" content="Telehealth pediatric nutrition and eating disorder care led by Nisrine Hamad, RD. Licensed to see clients in 17 US states.">
+<meta name="twitter:image" content="https://www.healthy-little-me.com/images/og-share.jpg">
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +47,57 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <link rel="apple-touch-icon" href="images/favicon.png">
+
+<!-- ===== Structured data: business + service area (US states only) ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Healthy Little Me",
+  "description": "Telehealth pediatric nutrition and eating disorder care led by Nisrine Hamad, a Registered Dietitian Nutritionist, serving families across the United States.",
+  "url": "https://www.healthy-little-me.com/",
+  "image": "https://www.healthy-little-me.com/images/og-share.jpg",
+  "telephone": "+1-614-404-5920",
+  "email": "healthylittlem@gmail.com",
+  "priceRange": "$$",
+  "medicalSpecialty": "Nutrition",
+  "isicV4": "8620",
+  "knowsLanguage": "en-US",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "10:00",
+    "closes": "17:00"
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Arizona" },
+    { "@type": "State", "name": "California" },
+    { "@type": "State", "name": "Colorado" },
+    { "@type": "State", "name": "Connecticut" },
+    { "@type": "State", "name": "Hawaii" },
+    { "@type": "State", "name": "Indiana" },
+    { "@type": "State", "name": "Massachusetts" },
+    { "@type": "State", "name": "Michigan" },
+    { "@type": "State", "name": "New Jersey" },
+    { "@type": "State", "name": "New York" },
+    { "@type": "State", "name": "Ohio" },
+    { "@type": "State", "name": "Oklahoma" },
+    { "@type": "State", "name": "Oregon" },
+    { "@type": "State", "name": "Pennsylvania" },
+    { "@type": "State", "name": "Texas" },
+    { "@type": "State", "name": "Virginia" },
+    { "@type": "State", "name": "Wisconsin" }
+  ],
+  "employee": {
+    "@type": "Person",
+    "name": "Nisrine Hamad",
+    "jobTitle": "Registered Dietitian Nutritionist (RD)",
+    "alumniOf": [
+      { "@type": "CollegeOrUniversity", "name": "The Ohio State University" }
+    ]
+  }
+}
+</script>
 </head>
 <body>
 <!-- ========== HEADER ========== -->
@@ -299,12 +383,11 @@
       <div class="booking-card cash reveal">
         <div class="booking-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
         <h3>Paying Cash?</h3>
-        <p>Book directly and pay securely via Venmo.</p>
-        <a href="https://venmo.com/code?user_id=4641399727195549399&created=1786972440.448831" target="_blank" rel="noopener" class="btn btn-outline btn-block">Book with Cash (Venmo) <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+        <p>Choose to pay via Venmo or book a time directly online.</p>
+        <button type="button" id="cash-modal-trigger" class="btn btn-outline btn-block">Book with Cash <i class="fa-solid fa-chevron-down"></i></button>
       </div>
     </div>
     <p class="booking-note reveal"><i class="fa-solid fa-circle-info"></i> Office hours: Monday&ndash;Friday, 10:00 AM&ndash;5:00 PM. Healthy Little Me is a telehealth-only practice. All visits are conducted via secure video call.</p>
-
     <div class="contact-form-wrap reveal">
       <div class="contact-form-head">
         <span class="eyebrow"><i class="fa-solid fa-envelope"></i> Prefer to Message Us?</span>
@@ -318,7 +401,6 @@
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-
         <div class="form-row">
           <label for="cf-name">Name</label>
           <input type="text" id="cf-name" name="name" placeholder="Your full name" required>
@@ -390,6 +472,28 @@
   </div>
 </footer>
 <button class="back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ========== CASH PAYMENT MODAL ========== -->
+<div class="modal-overlay" id="cash-modal" aria-hidden="true">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="cash-modal-title">
+    <button class="modal-close" id="cash-modal-close" aria-label="Close">&times;</button>
+    <h3 id="cash-modal-title">Paying Cash</h3>
+    <p>Choose whichever works best for you &mdash; both options open in a new tab.</p>
+    <div class="modal-options">
+      <a href="https://venmo.com/code?user_id=4641399727195549399&created=1786972440.448831" target="_blank" rel="noopener" class="modal-option">
+        <span class="modal-option-icon"><i class="fa-brands fa-venmo"></i></span>
+        <span class="modal-option-text"><strong>Pay with Venmo</strong><span>Send payment directly, then we'll confirm your time</span></span>
+        <i class="fa-solid fa-arrow-up-right-from-square modal-option-arrow"></i>
+      </a>
+      <a href="https://cal.com/healthylittle-me-mneof2" target="_blank" rel="noopener" class="modal-option">
+        <span class="modal-option-icon"><i class="fa-solid fa-calendar-days"></i></span>
+        <span class="modal-option-text"><strong>Book Online</strong><span>Pick a time slot directly on our calendar</span></span>
+        <i class="fa-solid fa-arrow-up-right-from-square modal-option-arrow"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 </body>
 </html>
