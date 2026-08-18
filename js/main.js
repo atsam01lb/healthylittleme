@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          formStatus.textContent = "Thanks! Your message has been sent — we'll be in touch soon.";
+          formStatus.textContent = "Thanks! Your message has been sent. We'll be in touch soon.";
           formStatus.classList.add('success');
           contactForm.reset();
         } else {
