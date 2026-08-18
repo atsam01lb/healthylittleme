@@ -549,6 +549,9 @@ h1, h2, h3, h4 {
 .booking { padding: 130px 0; background: var(--white); }
 .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .booking-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   border-radius: var(--radius-lg);
   padding: 44px 38px;
   box-shadow: var(--shadow-sm);
@@ -556,6 +559,7 @@ h1, h2, h3, h4 {
   position: relative;
   overflow: hidden;
 }
+.booking-card > .btn { margin-top: auto; }
 .booking-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
 .booking-card.insurance { background: linear-gradient(155deg, #eef3ec, var(--cream)); border: 1px solid rgba(124,148,115,0.18); }
 .booking-card.cash { background: linear-gradient(155deg, #fdf1e8, var(--cream)); border: 1px solid rgba(232,169,143,0.25); }
