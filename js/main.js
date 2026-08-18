@@ -132,6 +132,45 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- Contact form (AJAX submit via FormSubmit) ---------- */
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  if (contactForm && formStatus) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const submitBtn = contactForm.querySelector('button[type="submit"]');
+      const originalLabel = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' }
+        });
+
+        if (response.ok) {
+          formStatus.textContent = "Thanks! Your message has been sent — we'll be in touch soon.";
+          formStatus.classList.add('success');
+          contactForm.reset();
+        } else {
+          throw new Error('Form submission failed');
+        }
+      } catch (err) {
+        formStatus.textContent = 'Something went wrong sending your message. Please try again, or email us directly.';
+        formStatus.classList.add('error');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+      }
+    });
+  }
+
   /* ---------- Current year in footer ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
