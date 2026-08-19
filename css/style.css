@@ -495,6 +495,16 @@ h1, h2, h3, h4 {
 .testimonials .eyebrow { background: rgba(255,255,255,0.16); color: var(--white); }
 .testimonials .eyebrow::before { background: var(--mustard); }
 
+.rating-summary {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 44px;
+  font-family: 'Poppins', sans-serif;
+  position: relative; z-index: 1;
+}
+.rating-summary .score { font-size: 2rem; font-weight: 700; color: var(--white); }
+.rating-summary .stars-lg { color: var(--mustard); font-size: 1.15rem; letter-spacing: 4px; }
+.rating-summary .count { font-size: 0.86rem; color: rgba(255,255,255,0.75); }
+
 .slider { position: relative; max-width: 760px; margin: 0 auto; z-index: 1; }
 .slide-track { position: relative; min-height: 260px; }
 .slide {
@@ -514,7 +524,10 @@ h1, h2, h3, h4 {
   color: var(--sage-dark);
   display: flex; align-items: center; justify-content: center;
   font-family: 'Poppins', sans-serif; font-weight: 700;
+  flex-shrink: 0;
 }
+.slide-track .slide:nth-child(3n+2) .avatar { background: var(--coral); color: var(--white); }
+.slide-track .slide:nth-child(3n+3) .avatar { background: var(--mustard-dark); color: var(--white); }
 .slide .who { text-align: left; color: rgba(255,255,255,0.9); font-size: 0.88rem; }
 .slide .who strong { display: block; font-family: 'Poppins', sans-serif; font-size: 0.94rem; }
 .slider-dots { display: flex; justify-content: center; gap: 10px; margin-top: 40px; }
@@ -525,6 +538,9 @@ h1, h2, h3, h4 {
 }
 .slider-dots button.active { background: var(--white); width: 26px; border-radius: 999px; }
 .slider-note { text-align: center; margin-top: 26px; color: rgba(255,255,255,0.7); font-size: 0.78rem; font-style: italic; }
+
+.review-cta { text-align: center; margin-top: 46px; position: relative; z-index: 1; }
+.review-cta .btn-light:hover { color: var(--sage-dark); }
 
 /* Google-review style meta (stars, timestamp, source) */
 .review-meta {
