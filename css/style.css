@@ -495,16 +495,6 @@ h1, h2, h3, h4 {
 .testimonials .eyebrow { background: rgba(255,255,255,0.16); color: var(--white); }
 .testimonials .eyebrow::before { background: var(--mustard); }
 
-.rating-summary {
-  display: flex; align-items: center; justify-content: center; gap: 14px;
-  margin-bottom: 44px;
-  font-family: 'Poppins', sans-serif;
-  position: relative; z-index: 1;
-}
-.rating-summary .score { font-size: 2rem; font-weight: 700; color: var(--white); }
-.rating-summary .stars-lg { color: var(--mustard); font-size: 1.15rem; letter-spacing: 4px; }
-.rating-summary .count { font-size: 0.86rem; color: rgba(255,255,255,0.75); }
-
 .slider { position: relative; max-width: 760px; margin: 0 auto; z-index: 1; }
 .slide-track { position: relative; min-height: 260px; }
 .slide {
