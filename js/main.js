@@ -104,6 +104,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ---------- FAQ accordion ---------- */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        }
+      });
+      item.classList.toggle('open', !isOpen);
+      question.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
   /* ---------- Cash payment modal ---------- */
   const cashTrigger = document.getElementById('cash-modal-trigger');
   const cashModal = document.getElementById('cash-modal');
@@ -155,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (response.ok) {
-          formStatus.textContent = "Thanks! Your message has been sent. We'll be in touch soon.";
+          formStatus.textContent = "Thanks! Your message has been sent — we'll be in touch soon.";
           formStatus.classList.add('success');
           contactForm.reset();
         } else {
